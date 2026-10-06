@@ -5,20 +5,20 @@
 
 int main()
 {
-    // Constants
-    const char CORRECT_PIN[] = "1234"; // The correct PIN to unlock
+   
+    const char CORRECT_PIN[] = "1234"; 
     const int MAX_ATTEMPTS = 3;
 
     int attempts = 0;
-    int isAuthenticated = 0; // Acts as a boolean (0 = false, 1 = true)
-    char enteredPin[50];     // Array to hold the user's input
+    int isAuthenticated = 0;
+    char enteredPin[50];     
 
-    // Loop for PIN attempts (Slide 4)
+  
     while (attempts < MAX_ATTEMPTS && !isAuthenticated) {
         printf("Enter your 4-digit PIN: ");
-        scanf("%s", enteredPin); // Read input as a string
+        scanf("%s", enteredPin); 
 
-        // Slide 1: Validate PIN length using if-else-if
+        
         if (strlen(enteredPin) < 4) {
             printf("PIN is too short (must be 4 digits)\n");
         }
@@ -28,11 +28,11 @@ int main()
         else {
             printf("PIN is exactly 4 digits\n");
 
-            // Check if PIN is correct using strcmp (string compare)
+            
             if (strcmp(enteredPin, CORRECT_PIN) == 0) {
                 isAuthenticated = 1;
 
-                // Slide 2: Display the menu
+                
                 int choice;
                 printf("\n=== Device Menu ===\n");
                 printf("1. Open Door\n");
@@ -42,7 +42,7 @@ int main()
                 printf("Enter your choice (1-4): ");
                 scanf("%d", &choice);
 
-                // Slide 3: Switch statement to handle the choice
+                
                 switch (choice) {
                     case 1:
                         printf("Access granted. Door unlocked\n");
@@ -62,7 +62,7 @@ int main()
                 }
             }
             else {
-                // Incorrect PIN logic (Slide 4)
+               
                 attempts++;
                 int remaining = MAX_ATTEMPTS - attempts;
                 if (remaining > 0) {
