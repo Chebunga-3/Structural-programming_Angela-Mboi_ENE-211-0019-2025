@@ -71,17 +71,10 @@ int main()
             }
         }
     }
-
-    // Slide 5: Lockout logic if 3 attempts are exceeded
     if (!isAuthenticated) {
         printf("\nToo many incorrect attempts. System locked! Wait for 5 seconds...\n");
-
-        // Slide 5: For loop for countdown
         for (int i = 5; i > 0; i--) {
             printf("%d...\n", i);
-
-            // Sleep(1000) in C takes milliseconds
-            // Note: On Windows, use Sleep(1000) with a capital 'S' and include <windows.h>
             sleep(1);
         }
         printf("You can try again now.\n");
